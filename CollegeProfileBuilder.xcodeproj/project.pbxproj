@@ -16,6 +16,7 @@
 		D76CAF4A1C7CFAD000593B41 /* CollegeProfileBuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CAF491C7CFAD000593B41 /* CollegeProfileBuilderUITests.swift */; };
 		D7A319481C7F9F3200BAA314 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A319471C7F9F3200BAA314 /* DetailsViewController.swift */; };
 		D7E36CFE1C7E4A38000B76C7 /* College.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E36CFD1C7E4A38000B76C7 /* College.swift */; };
+		D7F905871C9894AE006C69EE /* WebPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F905861C9894AE006C69EE /* WebPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D76CAF4B1C7CFAD000593B41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7A319471C7F9F3200BAA314 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailsViewController.swift; path = ../DetailsViewController.swift; sourceTree = "<group>"; };
 		D7E36CFD1C7E4A38000B76C7 /* College.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = College.swift; sourceTree = "<group>"; };
+		D7F905861C9894AE006C69EE /* WebPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				D7A319471C7F9F3200BAA314 /* DetailsViewController.swift */,
 				D76CAF2B1C7CFAD000593B41 /* ViewController.swift */,
 				D76CAF2D1C7CFAD000593B41 /* Main.storyboard */,
+				D7F905861C9894AE006C69EE /* WebPageViewController.swift */,
 				D7E36CFD1C7E4A38000B76C7 /* College.swift */,
 				D76CAF301C7CFAD000593B41 /* Assets.xcassets */,
 				D76CAF321C7CFAD000593B41 /* LaunchScreen.storyboard */,
@@ -265,6 +268,7 @@
 				D76CAF2C1C7CFAD000593B41 /* ViewController.swift in Sources */,
 				D76CAF2A1C7CFAD000593B41 /* AppDelegate.swift in Sources */,
 				D7E36CFE1C7E4A38000B76C7 /* College.swift in Sources */,
+				D7F905871C9894AE006C69EE /* WebPageViewController.swift in Sources */,
 				D7A319481C7F9F3200BAA314 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

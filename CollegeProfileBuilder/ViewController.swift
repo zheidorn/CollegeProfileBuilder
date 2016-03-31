@@ -15,6 +15,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var nameVariable = ""
     var locationVariable = ""
     var numberOfStudents = 0
+    var webPage = ""
    
     @IBOutlet weak var editButton2: UIBarButtonItem!
     @IBOutlet weak var myTableView: UITableView!
@@ -23,11 +24,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         editButton2.tag = 0
         
-        let CollegeZero = College(Name: "University of Wisconsin", Location: "Madison, Wisconsin", numberOfStudents: "43,193", image: "wisconsinMascot" )
+        let CollegeZero = College(Name: "University of Wisconsin", Location: "Madison, Wisconsin", numberOfStudents: "43,193", image: "wisconsinMascot", webPage: "wisc.edu/")
         CollegeArray.append(CollegeZero)
-        let CollegeOne = College(Name: "Syracuse University", Location: "Syracuse, New York", numberOfStudents: "21,492", image: "SyracuseMascot")
+        let CollegeOne = College(Name: "Syracuse University", Location: "Syracuse, New York", numberOfStudents: "21,492", image: "SyracuseMascot", webPage: "syr.edu/")
         CollegeArray.append(CollegeOne)
-        let CollegeTwo = College(Name: "University of Texas", Location: "Austin Texas", numberOfStudents: "50,950", image: "TexasMascot")
+        let CollegeTwo = College(Name: "University of Texas", Location: "Austin Texas", numberOfStudents: "50,950", image: "TexasMascot", webPage: "utexas.edu/" )
         CollegeArray.append(CollegeTwo)
         myTableView.dataSource = self
         myTableView.delegate = self
@@ -102,7 +103,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         { (action) -> Void in
             
             let numberVariable = Int(numberField.text!)
-            self.CollegeArray.append(College(Name: nameField.text!, Location: locationField.text! , numberOfStudents: numberField.text!, image: ""))
+            self.CollegeArray.append(College(Name: nameField.text!, Location: locationField.text! , numberOfStudents: numberField.text!, image: "", webPage: ""))
             self.myTableView.reloadData()
     })
     
