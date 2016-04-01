@@ -45,11 +45,25 @@ class DetailsViewController: UIViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//            let nvc = segue.destinationViewController as! WebPageViewController
+//            nvc.webSite = currentCollege.webPage
+
+        
+        if segue.identifier == "zach"
+        {
+            let evc = segue.destinationViewController as! MapViewController
+            evc.name = currentCollege.name
+        }
+        
+        else
+        {
             let nvc = segue.destinationViewController as! WebPageViewController
-            nvc.webSite = currentCollege.webPage
+            nvc.webSite = self.currentCollege.webPage
+        }
     }
     
-
+    
+    
     
     @IBAction func cameraButton(sender: UIButton) {
         let actionSheet = UIAlertController(title: "title", message: nil, preferredStyle:  .ActionSheet)

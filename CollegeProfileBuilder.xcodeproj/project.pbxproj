@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D71C75EB1CAEFD4100590B8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71C75EA1CAEFD4100590B8A /* MapViewController.swift */; };
 		D76CAF2A1C7CFAD000593B41 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CAF291C7CFAD000593B41 /* AppDelegate.swift */; };
 		D76CAF2C1C7CFAD000593B41 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D76CAF2B1C7CFAD000593B41 /* ViewController.swift */; };
 		D76CAF2F1C7CFAD000593B41 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D76CAF2D1C7CFAD000593B41 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D71C75EA1CAEFD4100590B8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D76CAF261C7CFAD000593B41 /* CollegeProfileBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeProfileBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D76CAF291C7CFAD000593B41 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D76CAF2B1C7CFAD000593B41 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				D7A319471C7F9F3200BAA314 /* DetailsViewController.swift */,
 				D76CAF2B1C7CFAD000593B41 /* ViewController.swift */,
 				D76CAF2D1C7CFAD000593B41 /* Main.storyboard */,
+				D71C75EA1CAEFD4100590B8A /* MapViewController.swift */,
 				D7F905861C9894AE006C69EE /* WebPageViewController.swift */,
 				D7E36CFD1C7E4A38000B76C7 /* College.swift */,
 				D76CAF301C7CFAD000593B41 /* Assets.xcassets */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D76CAF2C1C7CFAD000593B41 /* ViewController.swift in Sources */,
+				D71C75EB1CAEFD4100590B8A /* MapViewController.swift in Sources */,
 				D76CAF2A1C7CFAD000593B41 /* AppDelegate.swift in Sources */,
 				D7E36CFE1C7E4A38000B76C7 /* College.swift in Sources */,
 				D7F905871C9894AE006C69EE /* WebPageViewController.swift in Sources */,

@@ -123,7 +123,7 @@
                                 <rect key="frame" x="369" y="577" width="30" height="30"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
-                                    <segue destination="9dQ-no-H0v" kind="presentation" id="q8G-K9-P0P"/>
+                                    <segue destination="9dQ-no-H0v" kind="presentation" identifier="brent" id="q8G-K9-P0P"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3D-Xr-HZN">
@@ -154,6 +154,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Od-bBD">
                                 <rect key="frame" x="369" y="624" width="30" height="30"/>
                                 <state key="normal" title="Map"/>
+                                <connections>
+                                    <segue destination="u95-Aw-4Ue" kind="show" identifier="zach" id="25c-uW-TiI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,20 +175,20 @@
             </objects>
             <point key="canvasLocation" x="3613" y="-679"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="ogM-tN-Qol">
             <objects>
-                <viewController id="u95-Aw-4Ue" sceneMemberID="viewController">
+                <viewController id="u95-Aw-4Ue" customClass="MapViewController" customModule="CollegeProfileBuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gVw-IU-ekw"/>
                         <viewControllerLayoutGuide type="bottom" id="e07-2Y-xe1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fP5-jk-rZW">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-g2-wRs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -196,10 +199,13 @@
                             <constraint firstItem="pfa-g2-wRs" firstAttribute="leading" secondItem="fP5-jk-rZW" secondAttribute="leadingMargin" constant="-20" id="rzw-jo-Q5t"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="pfa-g2-wRs" id="pYu-Zk-di5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I8k-9X-xCa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4060" y="-1644"/>
+            <point key="canvasLocation" x="4269" y="-1720"/>
         </scene>
         <!--Web Page View Controller-->
         <scene sceneID="lsA-qC-uBE">
