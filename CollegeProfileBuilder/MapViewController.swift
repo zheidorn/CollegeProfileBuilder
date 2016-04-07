@@ -13,11 +13,11 @@ import CoreLocation
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
 
     var locationManager = CLLocationManager()
-    var name = ""
     var location = ""
     var currentCollege = College()
     let annotation = MKPointAnnotation()
     let geocoder = CLGeocoder()
+    let coordinate = Coordinate
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -27,7 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.delegate = self
         locationManager.delegate = self
         mapView.showsUserLocation = true
-        mapView.userLocation.title = name
+        mapView.userLocation.title = location
         
 
         annotation.title = "title"
@@ -46,6 +46,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             {
                 let placemark = placemarks![0] as CLPlacemark
                 self.coordinate = placemark.location.coordinate
+//                self.addPinAnnotation
             }
         })
 
