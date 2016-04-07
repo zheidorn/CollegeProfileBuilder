@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="diL-fA-QFY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="diL-fA-QFY">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -137,25 +137,18 @@
                                     <navigationItem title="Title" id="7CQ-Xq-Y10"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odU-F6-g26">
-                                <rect key="frame" x="401" y="289" width="51" height="30"/>
-                                <state key="normal" title="camera"/>
-                                <connections>
-                                    <action selector="cameraButton:" destination="RCI-Nr-Yq8" eventType="touchUpInside" id="jUG-wR-ONP"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2er-Li-urq">
-                                <rect key="frame" x="312" y="289" width="48" height="30"/>
-                                <state key="normal" title="Gallery"/>
-                                <connections>
-                                    <action selector="GalleryButton:" destination="RCI-Nr-Yq8" eventType="touchUpInside" id="wMV-Wd-jrI"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wY8-Od-bBD">
                                 <rect key="frame" x="369" y="624" width="30" height="30"/>
                                 <state key="normal" title="Map"/>
                                 <connections>
                                     <segue destination="u95-Aw-4Ue" kind="show" identifier="zach" id="25c-uW-TiI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2er-Li-urq">
+                                <rect key="frame" x="360" y="289" width="48" height="30"/>
+                                <state key="normal" title="Gallery"/>
+                                <connections>
+                                    <action selector="GalleryButton:" destination="RCI-Nr-Yq8" eventType="touchUpInside" id="wMV-Wd-jrI"/>
                                 </connections>
                             </button>
                         </subviews>

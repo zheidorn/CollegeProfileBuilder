@@ -65,31 +65,26 @@ class DetailsViewController: UIViewController {
     
     
     
-    @IBAction func cameraButton(sender: UIButton) {
-        let actionSheet = UIAlertController(title: "title", message: nil, preferredStyle:  .ActionSheet)
-        actionSheet.popoverPresentationController?.sourceView = self.view
-        actionSheet.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
-        let cameraButton = UIAlertAction(title: "CAMERA", style: .Default) { (action) -> Void in
-            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            self.presentViewController(self.picker, animated: true, completion: nil)}
-        actionSheet.addAction(cameraButton)
-        
-        presentViewController(actionSheet, animated: true, completion: nil)
-        
-    }
     @IBAction func GalleryButton(sender: UIButton) {
         let actionSheet = UIAlertController(title: "title", message: nil, preferredStyle:  .ActionSheet)
         actionSheet.popoverPresentationController?.sourceView = self.view
         actionSheet.popoverPresentationController?.sourceRect = CGRect(x: 0, y: self.view.frame.height, width: self.view.frame.width, height: 100)
-        let library = UIAlertAction(title: "PHOTO LIBRARY", style: .Default)  { (action) -> Void in
-            self.picker.sourceType = UIImagePickerControllerSourceType.Camera
+        let Library = UIAlertAction(title: "PHOTO LIBRARY", style: .Default) { (action) -> Void in
+            self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             self.presentViewController(self.picker, animated: true, completion: nil)}
-        actionSheet.addAction(library)
+        actionSheet.addAction(Library)
         
         presentViewController(actionSheet, animated: true, completion: nil)
-        
+    
     }
 
+//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+//        picker.dismissViewControllerAnimated(true, completion: {
+//            let selectedImage = info[UIImagePickerControllerOriginalImage]
+//            as! UIImage
+//            self.myImageView.image = selectedImage
+//        })
+//    }
 
 
 
