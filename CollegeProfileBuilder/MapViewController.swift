@@ -14,47 +14,45 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     var locationManager = CLLocationManager()
     var location = ""
-    var currentCollege = College()
-    let annotation = MKPointAnnotation()
+    var name = ""
     let geocoder = CLGeocoder()
-    let coordinate = Coordinate
+
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        locationManager.delegate = self
-        locationManager.delegate = self
-        mapView.showsUserLocation = true
-        mapView.userLocation.title = location
-        
-
-        annotation.title = "title"
-        annotation.subtitle = "subtitle"
-        mapView.addAnnotation(annotation)
-    
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
-        geocoder.geocodeAddressString(location, completionHandler: {placemarks, error in
+        geocoder.geocodeAddressString(name + " " + location, completionHandler: {placemarks, error in
             if (error != nil)
             {
                 print(error)
             }
             else
             {
+                let currentCollege = College()
+                let annotation = MKPointAnnotation()
+                var coordinate = CLLocationCoordinate2D()
                 let placemark = placemarks![0] as CLPlacemark
-                self.coordinate = placemark.location.coordinate
-//                self.addPinAnnotation
+                coordinate = placemark.location!.coordinate
+                self.locationManager.delegate = self
+                self.mapView.showsUserLocation = true
+                self.mapView.userLocation.title = self.location
+                annotation.coordinate = coordinate
+                annotation.title = self.name
+                annotation.subtitle = self.location
+                self.mapView.addAnnotation(annotation)
+                self.mapView.setCenterCoordinate(coordinate, animated: true)
+                self.locationManager.requestAlwaysAuthorization()
+                self.locationManager.startUpdatingLocation()
+                let span = MKCoordinateSpanMake(1.0, 1.0)
+                var region = MKCoordinateRegionMake(coordinate, span)
+                self.mapView.setRegion(region, animated: true)
             }
         })
+   }
 
-    }
-    
-    let span = MKCoordinateSpanMake(1.0, 1.0)
-    let region = MKCoordinateRegionMake(coordinate, span)
-    
+
     
    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -65,8 +63,4 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             locationManager.stopUpdatingLocation()
         }
     }
-    
-
-   
-
 }

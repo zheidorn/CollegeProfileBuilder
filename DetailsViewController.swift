@@ -52,7 +52,9 @@ class DetailsViewController: UIViewController {
         if segue.identifier == "zach"
         {
             let evc = segue.destinationViewController as! MapViewController
-            evc.name = currentCollege.name
+            let wvc = segue.destinationViewController as! MapViewController
+            wvc.name = currentCollege.name
+            evc.location = currentCollege.location
         }
         
         else
@@ -60,6 +62,8 @@ class DetailsViewController: UIViewController {
             let nvc = segue.destinationViewController as! WebPageViewController
             nvc.webSite = self.currentCollege.webPage
         }
+        
+        
     }
     
     
@@ -75,16 +79,16 @@ class DetailsViewController: UIViewController {
         actionSheet.addAction(Library)
         
         presentViewController(actionSheet, animated: true, completion: nil)
-    
+        
     }
 
-//    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-//        picker.dismissViewControllerAnimated(true, completion: {
-//            let selectedImage = info[UIImagePickerControllerOriginalImage]
-//            as! UIImage
-//            self.myImageView.image = selectedImage
-//        })
-//    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: {
+            let selectedImage = info[UIImagePickerControllerOriginalImage]
+            as! UIImage
+            self.myImageView.image = selectedImage
+        })
+    }
 
 
 
