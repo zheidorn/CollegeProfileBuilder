@@ -19,6 +19,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,29 +31,39 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             }
             else
             {
-                let currentCollege = College()
-                let annotation = MKPointAnnotation()
-                var coordinate = CLLocationCoordinate2D()
-                let placemark = placemarks![0] as CLPlacemark
-                coordinate = placemark.location!.coordinate
-                self.locationManager.delegate = self
-                self.mapView.showsUserLocation = true
-                self.mapView.userLocation.title = self.location
-                annotation.coordinate = coordinate
-                annotation.title = self.name
-                annotation.subtitle = self.location
-                self.mapView.addAnnotation(annotation)
-                self.mapView.setCenterCoordinate(coordinate, animated: true)
-                self.locationManager.requestAlwaysAuthorization()
-                self.locationManager.startUpdatingLocation()
-                let span = MKCoordinateSpanMake(1.0, 1.0)
-                var region = MKCoordinateRegionMake(coordinate, span)
-                self.mapView.setRegion(region, animated: true)
+                print(placemarks)
+                let alert = UIAlertController(title: "Select a location", message: nil, preferredStyle: .ActionSheet)
+                
+                
+                for placemark in placemarks!
+                {
+                    let locationAction = UIAlertAction(title: placemark.name!, style: .Default, handler:
+                        { (action) -> Void in
+                            self.displayMap(placemark)
+                    })
+                    alert.addAction(locationAction)
+                }
+                
+                alert.popoverPresentationController!.sourceView = self.view
+                alert.popoverPresentationController!.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
+                self.presentViewController(alert, animated: true, completion: nil)
             }
         })
    }
 
+    func displayMap(placemark: CLPlacemark)
+    {
+        mapTextField.text = placemark.name
+        let center = placemark.location!.coordinate
+        let span = MKCoordinateSpanMake(1.0, 1.0)
+        let region = MKCoordinateRegionMake(center, span)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = center
+        annotation.title = placemark.name
+        mapView.addAnnotation(annotation)
+        mapView.setRegion(region, animated: true)
 
+    }
     
    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

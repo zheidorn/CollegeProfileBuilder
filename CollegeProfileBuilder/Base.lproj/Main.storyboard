@@ -183,6 +183,11 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pfa-g2-wRs">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </mapView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M9C-MI-K0Q">
+                                <rect key="frame" x="456" y="483" width="203" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -193,6 +198,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="mapTextField" destination="M9C-MI-K0Q" id="B8I-Y7-g9B"/>
                         <outlet property="mapView" destination="pfa-g2-wRs" id="pYu-Zk-di5"/>
                     </connections>
                 </viewController>
