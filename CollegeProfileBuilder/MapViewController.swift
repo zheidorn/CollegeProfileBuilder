@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UITextFieldDelegate {
 
     var locationManager = CLLocationManager()
     var location = ""
@@ -23,8 +23,18 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        geocoder.geocodeAddressString(name + " " + location , completionHandler: {placemarks, error in
+        findLocation(location)
+        mapTextField.text = location
+   }
+    func textFieldShouldReturn(mapTextField: UITextField) -> Bool {
+        var location = mapTextField.text!
+        mapTextField.resignFirstResponder()
+        findLocation(location)
+        return true
+    }
+    func findLocation(location: String)
+    {
+        geocoder.geocodeAddressString(/*name + " " + */location)/* , completionHandler: */{ (placemarks, error) -> Void in
             if (error != nil)
             {
                 print(error)
@@ -48,8 +58,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
                 alert.popoverPresentationController!.sourceRect = CGRectMake(self.view.bounds.size.width / 2.0, self.view.bounds.size.height / 2.0, 1.0, 1.0)
                 self.presentViewController(alert, animated: true, completion: nil)
             }
-        })
-   }
+        }
+    }
+    
+    
+    
+    
 
     func findPlacemark(placemark: CLPlacemark)
     {
