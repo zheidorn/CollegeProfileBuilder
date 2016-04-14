@@ -24,7 +24,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        geocoder.geocodeAddressString(name + " " + location, completionHandler: {placemarks, error in
+        geocoder.geocodeAddressString(name + " " + location , completionHandler: {placemarks, error in
             if (error != nil)
             {
                 print(error)
@@ -74,4 +74,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             locationManager.stopUpdatingLocation()
         }
     }
+    
+  
+    
 }
