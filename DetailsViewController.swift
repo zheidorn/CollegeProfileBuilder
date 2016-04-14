@@ -82,7 +82,7 @@ class DetailsViewController: UIViewController {
         
     }
 
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSString : AnyObject]) {
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: {
             let selectedImage = info[UIImagePickerControllerOriginalImage]
                 as! UIImage

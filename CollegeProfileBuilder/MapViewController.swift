@@ -32,14 +32,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             else
             {
                 print(placemarks)
-                let alert = UIAlertController(title: "Select a location", message: nil, preferredStyle: .ActionSheet)
+                let alert = UIAlertController(title: "pick a location", message: nil, preferredStyle: .ActionSheet)
                 
                 
                 for placemark in placemarks!
                 {
                     let locationAction = UIAlertAction(title: placemark.name!, style: .Default, handler:
                         { (action) -> Void in
-                            self.displayMap(placemark)
+                            self.findPlacemark(placemark)
                     })
                     alert.addAction(locationAction)
                 }
@@ -51,9 +51,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         })
    }
 
-    func displayMap(placemark: CLPlacemark)
+    func findPlacemark(placemark: CLPlacemark)
     {
-        mapTextField.text = placemark.name
+        mapTextField.text = placemark.name! + " " + location
         let center = placemark.location!.coordinate
         let span = MKCoordinateSpanMake(1.0, 1.0)
         let region = MKCoordinateRegionMake(center, span)
