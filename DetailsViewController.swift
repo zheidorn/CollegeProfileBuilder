@@ -77,22 +77,22 @@ class DetailsViewController: UIViewController {
             self.picker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
             self.presentViewController(self.picker, animated: true, completion: nil)}
         actionSheet.addAction(Library)
+        
+        func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
+            picker.dismissViewControllerAnimated(true, completion: {
+                let selectedImage = info[UIImagePickerControllerOriginalImage]
+                    as! UIImage
+                self.myImageView.image = selectedImage
+                
+                
+            })
             
+        }
+    
         presentViewController(actionSheet, animated: true, completion: nil)
         
     }
-
-    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        picker.dismissViewControllerAnimated(true, completion: {
-            let selectedImage = info[UIImagePickerControllerOriginalImage]
-                as! UIImage
-            self.myImageView.image = selectedImage
-            
-            
-        })
-        
-    }
-    
+   
 
 
 
